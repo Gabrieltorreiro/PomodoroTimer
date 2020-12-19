@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #171717;
+}
+
+.page {
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    width: 100%;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+}
+
+.timer-label, .session-label, .break-label, input[type=text] {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.app-container header {
+    display: grid;
+    grid-template-areas: 
+    "label label"
+    "timer timer"
+    "btn1 btn2"
+    ;
+    grid-row-gap: 20px;
+    justify-items: center;
+    padding: 30px;
+    background: #eb144c;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+}
+
+@media screen and (max-width:600px){
+    .app-container header {
+        grid-template-areas: 
+    "label label"
+    "timer timer"
+    "btn1"
+    "btn2"
+    ;
+    }
+    .app-container header input {
+        width: 100%;
+    }
+}
+
+
+.app-container header .start-stop{
+    grid-area: btn1;
+}
+
+.app-container header .reset{
+    grid-area: btn2;
+}
+
+.app-container .timer-label {
+    grid-area: label;
+    text-align: center;
+    display: block;
+    font-size: 150%;
+    color: #fff;
+}
+
+.app-container .timer-left {
+    grid-area: timer;
+    font-size: 600%;
+}
+
+.start-stop, .reset {
+    width: 80%;
+    height: 46px;
+    background: #fff;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    transition: background-color .3s ease-in-out;
+    box-shadow: 0 0 2px 0 black;
+    outline: none;
+}
+
+.start-stop:hover, .reset:hover {
+    color: white;
+    background: #00074b;
+}
+
+footer {
+    display: grid;
+    grid-template-areas: 'session break';
+    align-content: center;
+    align-items: center;
+    padding: 30px;
+    background: #ffffff;
+    color: #000000;
+    text-align: center;
+    border-radius: 0 0 5px 5px;
+    width: 100%;
+}
+
+footer>div {
+    display: block;
+}
+
+.session, .break {
+    font-size: 25px;
+    outline: none;
+    border: none;
+    text-align: center;
+    width: 50px;
+    padding: 10px;
+    background: none;
+}
+
+.session {
+    grid-area: session;
+}
+
+.break {
+    grid-area: break;
+}
